@@ -1,0 +1,23 @@
+from django.db import models
+from tinymce import models as tinymce_models
+
+# Create your models here.
+class Blog(models.Model):
+    '''creating different fields for a blog'''
+    main_title          = models.CharField(max_length=100)
+    single_line_body    = models.CharField(max_length=100)
+    content             = tinymce_models.HTMLField()
+    date_of_publish     = models.DateField()
+    image               = models.ImageField(upload_to='blog_image')
+    seo_title           = models.CharField(max_length=50,null=True)
+    seo_description     = models.TextField(null=True)
+    seo_keyword         = models.CharField(max_length=50,null=True)
+
+
+class BlogComment(models.Model):
+    '''creating different fields for comments by the user'''
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE,null=True)
+    first_name = models.CharField(max_length=50)
+    last_name  = models.CharField(max_length=50)
+    email_id   = models.EmailField()
+    comment    = models.TextField()

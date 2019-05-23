@@ -1,0 +1,8 @@
+Creating Blog app with following files.
+Creating a dashboard which takes the information of blogs. This is done by creating a blog model and forms.
+Three html files, blog_upload ,all_blog and single_blog are used.
+blog_upload takes all the blog details. Those details has to be viewed on all_blog.
+In all_blog html if a particular blog is clicked then, a single blog has to be created which views all the content of particular blog on single_blog
+
+
+Facing difficult in handling the image uploaded. This error was resolved by refering to https://www.geeksforgeeks.org/python-uploading-images-in-django/ 
