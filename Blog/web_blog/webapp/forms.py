@@ -3,6 +3,12 @@ from .models import Blog,BlogComment
 
 class BlogForm(forms.ModelForm):
     '''creating forms for the fields written in Blog model'''
+    date_of_publish =forms.DateField(
+
+        widget=forms.TextInput(attrs={
+            'id':'datepicker',
+        })
+    )
     class Meta:
         model=Blog
         fields=('main_title','single_line_body','content','date_of_publish',
